@@ -1,0 +1,29 @@
+{
+  "name": "booleanize",
+  "description": "Evaluate string if \"true\" or \"false\".",
+  "main": "index.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "boolean",
+    "true",
+    "false",
+    "evalute",
+    "booleanize"
+  ],
+  "homepage": "https://github.com/volkovasystems/booleanize",
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
