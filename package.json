@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/volkovasystems/booleanize/issues"
   },
-  "homepage": "https://github.com/volkovasystems/booleanize#readme"
+  "homepage": "https://github.com/volkovasystems/booleanize#readme",
+  "dependencies": {
+    "harden": "^0.2.0"
+  }
 }

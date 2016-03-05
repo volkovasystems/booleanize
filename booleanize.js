@@ -42,6 +42,18 @@
 	@end-include
 */
 
+if( !( typeof window != "undefined" &&
+	"harden" in window ) )
+{
+	var harden = require( "harden" );
+}
+
+if( typeof window != "undefined" && 
+	!( "harden" in window ) )
+{
+	throw new Error( "harden is not defined" ); 
+}
+
 var booleanize = function booleanize( entity ){
 	/*:
 		@meta-configuration:
@@ -90,3 +102,15 @@ var booleanize = function booleanize( entity ){
 		return false;
 	}
 };
+
+if( typeof module != "undefined" ){ 
+	module.exports = booleanize; 
+}
+
+if( typeof global != "undefined" ){
+	harden
+		.bind( booleanize )( "globalize", 
+			function globalize( ){
+				harden.bind( global )( "booleanize", booleanize );
+			} );
+}
