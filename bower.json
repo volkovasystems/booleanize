@@ -1,7 +1,7 @@
 {
   "name": "booleanize",
   "description": "Evaluate string if \"true\" or \"false\".",
-  "main": "index.js",
+  "main": "booleanize.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
   ],

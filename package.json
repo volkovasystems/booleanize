@@ -2,7 +2,7 @@
   "name": "booleanize",
   "version": "0.0.0",
   "description": "Evaluate string if \"true\" or \"false\".",
-  "main": "index.js",
+  "main": "booleanize.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
