@@ -79,6 +79,14 @@ var booleanize = function booleanize( entity ){
 	}else if( typeof entity == "boolean" ){
 		return entity;
 	
+	}else if( typeof entity == "number" ){
+		if( entity <= 0 ){
+			return false;
+		
+		}else{
+			return true;
+		}
+
 	}else if( Array.isArray( entity ) ){
 		if( entity.length == 0 ){
 			return false;
