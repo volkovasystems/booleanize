@@ -1,6 +1,6 @@
 {
   "name": "booleanize",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Evaluate string if \"true\" or \"false\".",
   "main": "booleanize.js",
   "scripts": {
