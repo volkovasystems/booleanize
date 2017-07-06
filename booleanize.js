@@ -1,8 +1,12 @@
-/*:
+"use strict";
+
+/*;
 	@module-license:
 		The MIT License (MIT)
+		@mit-license
 
-		Copyright (c) 2015 Richeve Siodina Bebedor
+		Copyright (@c) 2017 Richeve Siodina Bebedor
+		@email: richeve.bebedor@gmail.com
 
 		Permission is hereby granted, free of charge, to any person obtaining a copy
 		of this software and associated documentation files (the "Software"), to deal
@@ -25,100 +29,59 @@
 
 	@module-configuration:
 		{
-			"packageName": "booleanize",
+			"package": "booleanize",
 			"path": "booleanize/booleanize.js",
-			"fileName": "booleanize.js",
-			"moduleName": "booleanize",
-			"authorName": "Richeve S. Bebedor",
-			"authorEMail": "richeve.bebedor@gmail.com",
-			"repository": "git@github.com:volkovasystems/booleanize.git"
+			"file": "booleanize.js",
+			"module": "booleanize",
+			"author": "Richeve S. Bebedor",
+			"eMail": "richeve.bebedor@gmail.com",
+			"repository": "https://github.com/volkovasystems/booleanize.git",
+			"test": "booleanize-test.js",
+			"global": true
 		}
 	@end-module-configuration
 
 	@module-documentation:
+		Evaluate string if "true" or "false".
 	@end-module-documentation
 
 	@include:
+		{
+			"truly": "truly"
+		}
 	@end-include
 */
 
-if( !( typeof window != "undefined" &&
-	"harden" in window ) )
-{
-	var harden = require( "harden" );
-}
-
-if( typeof window != "undefined" && 
-	!( "harden" in window ) )
-{
-	throw new Error( "harden is not defined" ); 
-}
+const truly = require( "truly" );
 
 var booleanize = function booleanize( entity ){
-	/*:
+	/*;
 		@meta-configuration:
 			{
-				"entity:required": "string|boolean|*"
+				"entity:required": [
+					"string",
+					"boolean",
+					"*"
+				]
 			}
 		@end-meta-configuration
 	*/
 
 	if( typeof entity == "string" ){
-		entity = entity.toLowerCase( );
-
-		if( entity === "false" ){
-			return false;
-		
-		}else if( entity === "true" ){
-			return true;
-		
-		}else{
-			return false;
-		}
-
-	}else if( typeof entity == "boolean" ){
-		return entity;
-	
-	}else if( typeof entity == "number" ){
-		if( entity <= 0 ){
-			return false;
-		
-		}else{
+		if( entity.toLowerCase( ) == "true" ){
 			return true;
 		}
 
-	}else if( Array.isArray( entity ) ){
-		if( entity.length == 0 ){
+		if( entity.toLowerCase( ) == "false" ){
 			return false;
-		
-		}else{
-			return true;
 		}
-
-	}else if( typeof entity == "object" ){
-		if( entity === null ){
-			return false;
-		
-		}else if( Object.keys( entity ).length == 0 ){
-			return false;
-		
-		}else{
-			return true;
-		}
-
-	}else{
-		return false;
 	}
+
+	if( typeof entity == "boolean" ){
+		return entity;
+	}
+
+	return truly( entity );
 };
 
-if( typeof module != "undefined" ){ 
-	module.exports = booleanize; 
-}
-
-if( typeof global != "undefined" ){
-	harden
-		.bind( booleanize )( "globalize", 
-			function globalize( ){
-				harden.bind( global )( "booleanize", booleanize );
-			} );
-}
+module.exports = booleanize;

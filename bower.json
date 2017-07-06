@@ -1,8 +1,9 @@
 {
   "name": "booleanize",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Evaluate string if \"true\" or \"false\".",
-  "main": "booleanize.js",
+  "main": "booleanize.deploy.js",
+  "support": "booleanize.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
   ],
@@ -28,6 +29,6 @@
     "tests"
   ],
   "dependencies": {
-    "harden": "^0.2.0"
+    "truly": "^0.19.0"
   }
 }
