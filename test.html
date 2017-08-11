@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>booleanize unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./booleanize.deploy.js"></script>
+	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "booleanize unit test", function( assert ) {
+
+				assert.equal( booleanize( true ), true, "should be equal to true" );
+
+				assert.equal( booleanize( "true" ), true, "should be equal to true" );
+
+				assert.equal( booleanize( "True" ), true, "should be equal to true" );
+
+				assert.equal( booleanize( 1 ), true, "should be equal to true" );
+
+				assert.equal( booleanize( "false" ), false, "should be equal to false" );
+
+				assert.equal( booleanize( false ), false, "should be equal to false" );
+
+				assert.equal( booleanize( ), false, "should be equal to false" );
+
+			} );
+		</script>
+	</body>
+</html>
