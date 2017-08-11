@@ -1,11 +1,12 @@
 {
   "name": "booleanize",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Evaluate string if \"true\" or \"false\".",
   "main": "booleanize.deploy.js",
   "support": "booleanize.support.js",
   "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -29,6 +30,6 @@
     "tests"
   ],
   "dependencies": {
-    "truly": "^0.19.0"
+    "truly": "^0.20.0"
   }
 }
