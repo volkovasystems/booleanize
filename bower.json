@@ -1,35 +1,32 @@
 {
-  "name": "booleanize",
-  "version": "0.2.0",
-  "description": "Evaluate string if \"true\" or \"false\".",
-  "main": "booleanize.deploy.js",
-  "support": "booleanize.support.js",
-  "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "boolean",
-    "true",
-    "false",
-    "evalute",
-    "booleanize"
-  ],
-  "homepage": "https://github.com/volkovasystems/booleanize",
-  "moduleType": [
-    "es6",
-    "globals",
-    "node"
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "truly": "^0.20.0"
-  }
+	"name": "booleanize",
+	"version": "0.2.0",
+	"description": "Evaluate string if \"true\" or \"false\".",
+	"main": "booleanize.deploy.js",
+	"support": "booleanize.support.js",
+	"authors": [
+		"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"boolean",
+		"true",
+		"false",
+		"evalute",
+		"booleanize"
+	],
+	"homepage": "https://github.com/volkovasystems/booleanize",
+	"moduleType": [
+		"es6",
+		"globals",
+		"node"
+	],
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
 }
