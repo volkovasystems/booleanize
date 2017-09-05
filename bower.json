@@ -28,5 +28,8 @@
 		"bower_components",
 		"test",
 		"tests"
-	]
+	],
+	"dependencies": {
+		"truly": "^0.20.0"
+	}
 }

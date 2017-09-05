@@ -67,27 +67,205 @@ const path = require( "path" );
 
 
 //: @server:
-
 describe( "booleanize", ( ) => {
 
-} );
+	describe( "`booleanize( true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( true ), true );
+		} );
+	} );
 
+	describe( "`booleanize( 'true' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( "true" ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 'True' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( "True" ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 1 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( 1 ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 'false' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( "false" ), false );
+		} );
+	} );
+
+	describe( "`booleanize( false )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( false ), false );
+		} );
+	} );
+
+	describe( "`booleanize( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( ), false );
+		} );
+	} );
+
+} );
 //: @end-server
 
 
 //: @client:
-
 describe( "booleanize", ( ) => {
 
-} );
+	describe( "`booleanize( true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( true ), true );
+		} );
+	} );
 
+	describe( "`booleanize( 'true' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( "true" ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 'True' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( "True" ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 1 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( 1 ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 'false' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( "false" ), false );
+		} );
+	} );
+
+	describe( "`booleanize( false )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( false ), false );
+		} );
+	} );
+
+	describe( "`booleanize( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( ), false );
+		} );
+	} );
+
+} );
 //: @end-client
 
 
 //: @bridge:
-
 describe( "booleanize", ( ) => {
 
-} );
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
+	describe( "`booleanize( true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return booleanize( true );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`booleanize( 'true' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return booleanize( "true" );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`booleanize( 'True' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return booleanize( "True" );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`booleanize( 1 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return booleanize( 1 );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`booleanize( 'false' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return booleanize( "false" );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+		} );
+	} );
+
+	describe( "`booleanize( false )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return booleanize( false );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+		} );
+	} );
+
+	describe( "`booleanize( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return booleanize( );
+				}
+
+			).value;
+			
+			assert.equal( result, false );
+		} );
+	} );
+
+} );
 //: @end-bridge

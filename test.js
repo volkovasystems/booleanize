@@ -63,11 +63,51 @@ const booleanize = require( "./booleanize.js" );
 
 
 //: @server:
-
 describe( "booleanize", ( ) => {
 
-} );
+	describe( "`booleanize( true )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( true ), true );
+		} );
+	} );
 
+	describe( "`booleanize( 'true' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( "true" ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 'True' )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( "True" ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 1 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( booleanize( 1 ), true );
+		} );
+	} );
+
+	describe( "`booleanize( 'false' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( "false" ), false );
+		} );
+	} );
+
+	describe( "`booleanize( false )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( false ), false );
+		} );
+	} );
+
+	describe( "`booleanize( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( booleanize( ), false );
+		} );
+	} );
+
+} );
 //: @end-server
 
 
